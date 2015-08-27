@@ -22,11 +22,25 @@ Javascript can be linted with [jshint](http://jshint.com/):
 grunt jshint
 ```
 
+Unminified source can be regenerated with:
+
+```
+grunt concat
+```
+
+Minified source can be regenerated with:
+
+```
+grunt uglify
+```
+
 API documention can be generated with [jsdoc](https://github.com/jsdoc3/jsdoc):
 
 ```
 grunt jsdoc
 ```
+
+The release process is documented [on the wiki](https://github.com/nprapps/pym.js/wiki/Release-Process).
 
 ## License & Credits
 
@@ -36,6 +50,12 @@ Pym.js was built by the [NPR Visuals](http://github.com/nprapps) team, based on 
 
 Additional contributors:
 
-* [Pierre-Yves Jamon](https://github.com/Pym) 
+* [Pierre-Yves Jamon](https://github.com/Pym)
 * [jugglinmike](https://github.com/jugglinmike)
 * [David Rogers](https://github.com/al-the-x)
+* [Noah Veltman](https://github.com/veltman)
+* [Andrei Scheinkman](https://github.com/ascheink)
+* [Thomas Wilburn](https://github.com/thomaswilburn)
+* [Justin Dearing](https://github.com/zippy1981)
+* [Chris Amico](https://github.com/eyeseast)
+* [Ryan Murphy](https://github.com/rdmurphy)

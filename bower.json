@@ -1,10 +1,10 @@
 {
     "name": "pym.js",
-    "version": "0.1.2",
+    "version": "0.4.6",
     "homepage": "http://blog.apps.npr.org/pym.js/",
     "authors": ["NPR"],
     "description": "Resize an iframe responsively depending on the height of its content and the width of its container.",
-    "main": "src/pym.js",
+    "main": "dist/pym.js",
     "keywords": [
         "iframe",
         "responsive",
@@ -13,6 +13,7 @@
     "license": "MIT",
     "ignore": [
         "**/.*",
+        "src",
         "examples"
     ]
 }

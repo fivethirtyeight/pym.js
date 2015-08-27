@@ -7,7 +7,7 @@
 
 </head>
 <body>
-    <a id="test" href="#">I'm the parent--click me!</a>
+    <button id="remove" href="#">Remove this child</button>
     <div id="from-child"></div>
     <div id="example"></div>
 
@@ -17,14 +17,10 @@
 
         function onClick(e) {
             e.preventDefault();
-            pymParent.sendMessage('parent-click', 'Parent clicked!');
+            pymParent.remove();
         }
 
-        pymParent.onMessage('child-click', function(data) {
-             document.getElementById('from-child').innerHTML = data;
-        });
-
-        document.getElementById('test').addEventListener('click', onClick);
+        document.getElementById('remove').addEventListener('click', onClick);
     </script>
 </body>
 </html>

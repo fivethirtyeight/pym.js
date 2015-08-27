@@ -3,6 +3,8 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    // Load package config  
+    pkg: grunt.file.readJSON('package.json'),
 
     // Task configuration.
     jshint: {
@@ -40,6 +42,27 @@ module.exports = function(grunt) {
         }
       }
     },
+    concat: {
+        options: {
+            banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                    '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        },
+        unminified: {
+            src: ['src/pym.js'],
+            dest: 'dist/pym.js'
+        }
+    },
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      minified: {
+        files: {
+          'dist/pym.min.js': ['src/pym.js']
+        }
+      }
+    },
     watch: {
       jshint: {
         files: "<%= jshint.files  %>",
@@ -56,7 +79,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-jsdoc");
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Default task.
-  grunt.registerTask("default", ["jshint"]);
+  grunt.registerTask("default", ["jshint", "concat", "uglify"]);
 };
